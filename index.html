@@ -3,71 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 工具导航 - 精选AI工具大全</title>
-<meta name="description" content="精选AI工具导航站，收录 ChatGPT、Midjourney、Stable Diffusion 等热门 AI 工具，分类整理，每日更新。">
-<meta name="keywords" content="AI工具,AI导航,ChatGPT,Midjourney,人工智能工具,AI网站">
-<!-- Google AdSense - 替换为你的ID -->
-<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+<title>AI 工具导航 - 精选AI工具大全 + AI科普</title>
+<meta name="description" content="精选AI工具导航站，收录 ChatGPT、Midjourney 等热门 AI 工具。还有 AI 科普文章，带你了解人工智能的方方面面。">
+<meta name="keywords" content="AI工具,AI导航,ChatGPT,人工智能,AI科普,AI教程">
+<!-- Google AdSense 代码 - 换成你自己的 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0a0f;color:#e0e0e0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;min-height:100vh}
-header{background:linear-gradient(180deg,#0f0f1a 0%,#0a0a0f 100%);padding:60px 20px 40px;text-align:center;border-bottom:1px solid #1a1a2e}
-header h1{font-size:32px;font-weight:700;background:linear-gradient(135deg,#818cf8,#c084fc,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:10px}
-header p{color:#6b7280;font-size:15px}
-header .search-box{margin-top:24px;max-width:500px;margin-left:auto;margin-right:auto}
-.search-box input{width:100%;padding:14px 20px;border-radius:12px;border:1px solid #1f2937;background:#111118;color:#e0e0e0;font-size:15px;outline:none;transition:all .3s}
+body{background:#0a0a0f;color:#e0e0e0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;min-height:100vh;line-height:1.7}
+a{color:#818cf8;text-decoration:none}
+a:hover{color:#c084fc}
+
+/* Header */
+header{background:linear-gradient(180deg,#0f0f1a 0%,#0a0a0f 100%);padding:50px 20px 36px;text-align:center;border-bottom:1px solid #1a1a2e}
+header h1{font-size:30px;font-weight:700;background:linear-gradient(135deg,#818cf8,#c084fc,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+header p{color:#6b7280;font-size:14px}
+.search-box{max-width:480px;margin:20px auto 0;padding:0 12px}
+.search-box input{width:100%;padding:12px 18px;border-radius:10px;border:1px solid #1f2937;background:#111118;color:#e0e0e0;font-size:14px;outline:none;transition:all .3s}
 .search-box input:focus{border-color:#818cf8;box-shadow:0 0 0 3px rgba(129,140,248,.15)}
 .search-box input::placeholder{color:#4b5563}
-.container{max-width:1200px;margin:0 auto;padding:24px 20px 60px}
-/* 广告位 */
-.ad-slot{background:linear-gradient(135deg,#111118,#16162a);border:1px solid #1f2937;border-radius:12px;text-align:center;padding:24px;margin:24px 0;color:#4b5563;font-size:13px;min-height:90px;display:flex;align-items:center;justify-content:center}
-.ad-slot span{opacity:.5}
-.ad-slot-header{margin-bottom:0;margin-top:0}
-/* 分类导航 */
-.category-tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 0 16px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+
+.container{max-width:1100px;margin:0 auto;padding:20px 16px 60px}
+
+/* ===== 广告 ===== */
+.ad-wrap{text-align:center;margin:28px 0;padding:16px;background:linear-gradient(135deg,#111118,#16162a);border:1px solid #1f2937;border-radius:10px;min-height:80px;display:flex;align-items:center;justify-content:center}
+.ad-wrap .ad-label{font-size:11px;color:#4b5563;letter-spacing:1px}
+.ad-inline{text-align:center;margin:24px 0;padding:12px;background:#111118;border:1px solid #1f2937;border-radius:8px;min-height:70px;display:flex;align-items:center;justify-content:center}
+.ad-inline .ad-label{font-size:11px;color:#4b5563}
+
+/* ===== 分类导航 ===== */
+.category-tabs{display:flex;gap:6px;overflow-x:auto;padding:4px 0 14px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .category-tabs::-webkit-scrollbar{display:none}
-.cat-tab{padding:8px 20px;border-radius:20px;border:1px solid #1f2937;background:transparent;color:#9ca3af;font-size:14px;cursor:pointer;white-space:nowrap;transition:all .2s;flex-shrink:0}
+.cat-tab{padding:7px 18px;border-radius:20px;border:1px solid #1f2937;background:transparent;color:#9ca3af;font-size:13px;cursor:pointer;white-space:nowrap;transition:all .2s;flex-shrink:0}
 .cat-tab:hover{border-color:#818cf8;color:#e0e0e0}
 .cat-tab.active{background:linear-gradient(135deg,#818cf8,#c084fc);color:#fff;border-color:transparent}
-/* 分类区 */
-.category{margin-bottom:40px}
-.category-header{display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid #1a1a2e}
-.category-icon{font-size:22px}
-.category-title{font-size:20px;font-weight:600;color:#f0f0f0}
-.category-count{font-size:13px;color:#6b7280;margin-left:auto}
-/* 工具卡片网格 */
-.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
-.tool-card{background:#111118;border:1px solid #1f2937;border-radius:12px;padding:16px;transition:all .25s;cursor:pointer;position:relative;overflow:hidden}
-.tool-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#818cf8,transparent);opacity:0;transition:opacity .3s}
-.tool-card:hover{transform:translateY(-3px);border-color:#374151;box-shadow:0 8px 30px rgba(0,0,0,.3)}
-.tool-card:hover::before{opacity:1}
-.tool-card-top{display:flex;align-items:flex-start;gap:12px}
-.tool-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
-.tool-info{flex:1;min-width:0}
-.tool-name{font-size:15px;font-weight:600;color:#f0f0f0;margin-bottom:4px}
-.tool-desc{font-size:13px;color:#6b7280;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.tool-tags{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
-.tool-tag{font-size:11px;padding:2px 8px;border-radius:4px;background:rgba(129,140,248,.1);color:#818cf8;border:1px solid rgba(129,140,248,.15)}
-.tool-link{display:inline-block;margin-top:10px;font-size:13px;color:#818cf8;text-decoration:none;transition:color .2s}
-.tool-link:hover{color:#c084fc}
-.tool-link::after{content:' →'}
-/* 付费标签 */
-.tag-free{background:rgba(16,185,129,.1)!important;color:#10b981!important;border-color:rgba(16,185,129,.2)!important}
-.tag-paid{background:rgba(245,158,11,.1)!important;color:#f59e0b!important;border-color:rgba(245,158,11,.2)!important}
-.tag-freemium{background:rgba(139,92,246,.1)!important;color:#8b5cf6!important;border-color:rgba(139,92,246,.2)!important}
-/* 页脚 */
+
+/* ===== 工具卡片 ===== */
+.category{margin-bottom:32px}
+.category-header{display:flex;align-items:center;gap:10px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1a1a2e}
+.category-header .cat-icon{font-size:20px}
+.category-header .cat-title{font-size:18px;font-weight:600;color:#f0f0f0}
+.category-header .cat-count{font-size:12px;color:#6b7280;margin-left:auto}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.tool-card{background:#111118;border:1px solid #1f2937;border-radius:10px;padding:14px;transition:all .25s;cursor:pointer;position:relative;overflow:hidden}
+.tool-card:hover{transform:translateY(-2px);border-color:#374151;box-shadow:0 6px 24px rgba(0,0,0,.3)}
+.tool-card .tc-top{display:flex;align-items:flex-start;gap:10px}
+.tool-card .tc-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.tool-card .tc-info{flex:1;min-width:0}
+.tool-card .tc-name{font-size:14px;font-weight:600;color:#f0f0f0;margin-bottom:2px}
+.tool-card .tc-desc{font-size:12px;color:#6b7280;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tc-tags{display:flex;gap:4px;margin-top:6px;flex-wrap:wrap}
+.tc-tag{font-size:10px;padding:2px 7px;border-radius:4px;background:rgba(129,140,248,.1);color:#818cf8;border:1px solid rgba(129,140,248,.15)}
+.tc-tag.free{background:rgba(16,185,129,.1)!important;color:#10b981!important;border-color:rgba(16,185,129,.2)!important}
+.tc-tag.paid{background:rgba(245,158,11,.1)!important;color:#f59e0b!important;border-color:rgba(245,158,11,.2)!important}
+.tc-tag.freemium{background:rgba(139,92,246,.1)!important;color:#8b5cf6!important;border-color:rgba(139,92,246,.2)!important}
+.tc-link{font-size:12px;color:#818cf8;margin-top:6px;display:inline-block}
+.tc-link::after{content:' →'}
+
+/* ===== 文章 ===== */
+.article-section{margin:40px 0}
+.article{background:#111118;border:1px solid #1f2937;border-radius:12px;padding:28px 24px;margin-bottom:24px}
+.article h2{font-size:22px;font-weight:700;color:#f0f0f0;margin-bottom:8px;line-height:1.4}
+.article .meta{font-size:12px;color:#6b7280;margin-bottom:16px;display:flex;gap:16px;flex-wrap:wrap}
+.article .meta span::before{content:'•';margin-right:6px;color:#4b5563}
+.article .meta span:first-child::before{content:'';margin:0}
+.article p{font-size:15px;color:#d1d5db;margin-bottom:14px;line-height:1.8}
+.article p:last-child{margin-bottom:0}
+.article blockquote{border-left:3px solid #818cf8;padding:12px 16px;margin:16px 0;background:rgba(129,140,248,.05);border-radius:0 8px 8px 0;color:#9ca3af;font-size:14px;line-height:1.7}
+.article h3{font-size:17px;font-weight:600;color:#e0e0e0;margin:20px 0 10px}
+.article ul,.article ol{padding-left:20px;margin:12px 0 16px;color:#d1d5db;font-size:14px;line-height:1.8}
+.article li{margin-bottom:6px}
+.article .highlight{background:rgba(129,140,248,.08);border-radius:6px;padding:2px 6px;color:#a5b4fc}
+.ad-in-article{margin:20px 0}
+/* 侧边栏广告（文章中） */
+.ad-float{margin:20px 0;text-align:center}
+
+/* Footer */
 footer{text-align:center;padding:30px 20px;color:#4b5563;font-size:13px;border-top:1px solid #1a1a2e;margin-top:20px}
-footer a{color:#818cf8;text-decoration:none}
+
 /* 回到顶部 */
-#backTop{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:#1f2937;border:1px solid #374151;color:#e0e0e0;font-size:20px;cursor:pointer;display:none;align-items:center;justify-content:center;transition:all .2s;z-index:100}
+#backTop{position:fixed;bottom:28px;right:28px;width:40px;height:40px;border-radius:50%;background:#1f2937;border:1px solid #374151;color:#e0e0e0;font-size:18px;cursor:pointer;display:none;background:#111;z-index:100;transition:all .2s}
 #backTop:hover{background:#818cf8;border-color:#818cf8}
+
 /* 空结果 */
-.empty-state{text-align:center;padding:60px 20px;color:#4b5563}
-.empty-state .icon{font-size:48px;margin-bottom:12px}
+.empty-state{text-align:center;padding:50px 20px;color:#4b5563}
+
 @media(max-width:640px){
-  header h1{font-size:24px}
+  header h1{font-size:22px}
+  header{padding:36px 16px 24px}
+  .article{padding:20px 16px}
+  .article h2{font-size:19px}
+  .article p{font-size:14px}
+  .tool-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:400px){
   .tool-grid{grid-template-columns:1fr}
-  .cat-tab{padding:6px 14px;font-size:13px}
 }
 </style>
 </head>
@@ -75,216 +105,255 @@ footer a{color:#818cf8;text-decoration:none}
 
 <header>
   <h1>🤖 AI 工具导航</h1>
-  <p>收录最实用的 AI 工具，分类整理，持续更新</p>
+  <p>精选 AI 工具 + 科普 · 持续更新</p>
   <div class="search-box">
-    <input type="text" id="searchInput" placeholder="搜索工具名称或关键词..." oninput="filterTools()">
+    <input type="text" id="searchInput" placeholder="搜工具或文章..." oninput="filterTools()">
   </div>
 </header>
 
 <div class="container">
 
-  <!-- 顶部广告 -->
-  <div class="ad-slot ad-slot-header"><span>📢 广告位 — 替换为你的 AdSense 代码</span></div>
+  <!-- ==================== 顶部广告 ==================== -->
+  <div class="ad-wrap">
+    <span class="ad-label">📢 广告位</span>
+  </div>
 
-  <!-- 分类标签 -->
+  <!-- ==================== 分类标签 ==================== -->
   <div class="category-tabs" id="catTabs">
     <button class="cat-tab active" data-cat="all" onclick="switchCategory('all',this)">🔥 全部</button>
-    <button class="cat-tab" data-cat="chat" onclick="switchCategory('chat',this)">💬 对话AI</button>
-    <button class="cat-tab" data-cat="image" onclick="switchCategory('image',this)">🎨 图像生成</button>
-    <button class="cat-tab" data-cat="video" onclick="switchCategory('video',this)">🎬 视频生成</button>
-    <button class="cat-tab" data-cat="audio" onclick="switchCategory('audio',this)">🎵 音频/音乐</button>
-    <button class="cat-tab" data-cat="code" onclick="switchCategory('code',this)">💻 编程助手</button>
-    <button class="cat-tab" data-cat="write" onclick="switchCategory('write',this)">✍️ 写作/文案</button>
-    <button class="cat-tab" data-cat="design" onclick="switchCategory('design',this)">🎯 设计/创意</button>
-    <button class="cat-tab" data-cat="productivity" onclick="switchCategory('productivity',this)">⚡ 效率工具</button>
-    <button class="cat-tab" data-cat="other" onclick="switchCategory('other',this)">🔧 其他</button>
+    <button class="cat-tab" data-cat="chat" onclick="switchCategory('chat',this)">💬 对话</button>
+    <button class="cat-tab" data-cat="image" onclick="switchCategory('image',this)">🎨 图像</button>
+    <button class="cat-tab" data-cat="video" onclick="switchCategory('video',this)">🎬 视频</button>
+    <button class="cat-tab" data-cat="audio" onclick="switchCategory('audio',this)">🎵 音频</button>
+    <button class="cat-tab" data-cat="code" onclick="switchCategory('code',this)">💻 编程</button>
+    <button class="cat-tab" data-cat="write" onclick="switchCategory('write',this)">✍️ 文案</button>
+    <button class="cat-tab" data-cat="design" onclick="switchCategory('design',this)">🎯 设计</button>
+    <button class="cat-tab" data-cat="productivity" on click="switchCategory('productivity',this)">⚡ 效率</button>
   </div>
 
   <div id="toolContainer"></div>
 
-  <!-- 底部广告 -->
-  <div class="ad-slot"><span>📢 底部广告位 — 替换为 AdSense 代码</span></div>
+  <!-- ==================== 文章区 ==================== -->
+
+  <!-- 文章1 -->
+  <div class="article-section">
+    <div class="article">
+      <h2>ChatGPT 到底是怎么回答问题的？拆给你看</h2>
+      <div class="meta">
+        <span>2026.06.06</span>
+        <span>阅读约 6 分钟</span>
+        <span>#AI科普</span>
+      </div>
+      <p>先问个问题——你觉不觉得，ChatGPT 有时候像在"编"答案？</p>
+      <p>不是错觉。它就是会编。但这跟撒谎是两码事。</p>
+      <p>ChatGPT 的工作原理，说白了就是：<strong>它根本不知道你在问什么</strong>。这句话可能有点反直觉，但确实是核心。它做的不是"理解"然后"回答"，而是"猜下一个词该是什么"。</p>
+      <p>你输入一句"今天天气怎么样"，它不会真的去感受外面的温度。它只是在它那几百亿个参数里，算出一个概率——"今"后面最可能是"天"，"天"后面最可能是"气"，一路算下去，直到拼出一整段像模像样的回答。</p>
+
+      <!-- 广告：文章内容中间 -->
+      <div class="ad-in-article ad-inline"><span class="ad-label">📢 广告位</span></div>
+
+      <p>这就产生了一个很有趣的现象：<strong>你看它写出来的东西条理清晰、逻辑自洽，但内容可能是它自己"发明"的</strong>。AI 圈管这叫"幻觉"（Hallucination）。</p>
+      <p>举个例子，你问它"2025年诺贝尔物理学奖得主是谁"，如果它没被训练到那个数据，它不会说"我不知道"，而是会给你编一个看起来很有道理的名字、研究方向和颁奖理由。</p>
+      <p>那怎么避免呢？一个靠谱的方法是让它<strong>联网搜索</strong>。ChatGPT Plus 有 Browse 功能，Gemini 和 Perplexity 更是默认就联网。这些工具会先搜到真实信息，再基于搜到的内容回答，幻觉就少很多。</p>
+      <blockquote>一个小技巧：如果你问的是事实类问题，可以在提示词里加一句"请基于可靠来源回答"或者"如果你不确定就说不知道"。效果比你想的好。</blockquote>
+      <p>另外提一嘴，GPT-4 和 GPT-3.5 的区别不只是"更聪明"。GPT-4 在"对齐"（让 AI 更符合人类意图）上做了大量优化，所以它更不容易胡说八道。如果你还在用免费版，遇到它瞎编的情况，只能多问几次或者换个问法试试了。</p>
+    </div>
+
+    <!-- 广告：文章之间 -->
+    <div class="ad-wrap"><span class="ad-label">📢 广告位</span></div>
+
+    <!-- 文章2 -->
+    <div class="article">
+      <h2>AI 画图是怎么"看懂"你的描述的？</h2>
+      <div class="meta">
+        <span>2026.06.06</span>
+        <span>阅读约 7 分钟</span>
+        <span>#AI科普</span>
+      </div>
+      <p>你有没有想过——你在 Midjourney 打一句"a cat wearing a suit, cyberpunk style"，AI 是怎么把这句话变成一张图的？</p>
+      <p>简单说就是：它先把你的文字翻译成一组"数字指令"，然后用这组指令去"还原"成画面。</p>
+      <p>这个过程分两步走。</p>
+      <h3>第一步：理解文字</h3>
+      <p>AI 内置了一个叫 CLIP 的模型（OpenAI 做的），它的工作是把文字"编码"成一串包含语义信息的数字。比如"cat"这个词会被编码成一个向量，这个向量在数学空间里离"dog"不远，但离"car"很远。"wearing a suit"是另一个向量，叠加在"cat"上面。</p>
+      <p>整句话最后变成一个复杂的"语义坐标"，就像在地图上标了一个点——这个点附近就是"一只穿着西装的猫"应该在的位置。</p>
+
+      <div class="ad-in-article ad-inline"><span class="ad-label">📢 广告位</span></div>
+
+      <h3>第二步：从噪声里"长"出画面</h3>
+      <p>这是最神奇的部分。现在的文生图模型（Stable Diffusion、Midjourney、DALL·E）都用了一种叫<strong>扩散模型</strong>的技术。</p>
+      <p>想象你有一张全是雪花噪点的图片，就像老电视没信号时的那种。AI 的任务是：<strong>一步一步地消除噪声，同时每一步都往"猫穿西装"的方向拉一下</strong>。一开始你什么都看不出来，但到第十步左右，轮廓出来了，再后面细节越来越清楚，最后一张完整的图片就生成了。</p>
+      <p>有人形容这个过程像"从大理石里雕出雕像"——石头本来就在那里，你只是把多余的去掉。虽然不完全准确，但感觉上确实很像。</p>
+      <blockquote>一个冷知识：Stable Diffusion 可以在你自己的电脑上跑。只要有一块 8GB 以上显存的显卡就行。不需要联网，也不需要付费。这跟 Midjourney 那种云端服务完全不一样。</blockquote>
+      <p>所以现在很多 AI 画图老手会把两个工具搭配着用：先用 Midjourney 快速出图找感觉，再用 Stable Diffusion 做精细调整。当然如果不想折腾，直接用 Midjourney 也够用了，毕竟它一键出图的质量确实高。</p>
+    </div>
+
+    <!-- 广告：文章之间 -->
+    <div class="ad-wrap"><span class="ad-label">📢 广告位</span></div>
+
+    <!-- 文章3 -->
+    <div class="article">
+      <h2>普通人怎么用 AI 提升工作效率？5个真实场景</h2>
+      <div class="meta">
+        <span>2026.06.06</span>
+        <span>阅读约 8 分钟</span>
+        <span>#AI教程</span>
+      </div>
+      <p>说实话，网上那些"AI 让你一天干完一周的活"的文章，大多数是标题党。但 AI 确实能帮你省时间，关键是<strong>用到对的地方</strong>。</p>
+      <p>分享几个我实际每天都在用的场景。</p>
+
+      <h3>场景 1：写邮件写到崩溃</h3>
+      <p>大部分人写一封正式的商务邮件，会纠结措辞至少 10 分钟。我现在的做法是：写一个极简的要点版——"催客户周三前回复报价，语气礼貌但别太软"——丢给 Claude 或 ChatGPT，让它扩写成完整的邮件。改几个字就能发。一封邮件从 10 分钟压缩到 2 分钟。</p>
+
+      <h3>场景 2：整理会议纪要</h3>
+      <p>开会开了一个小时，录音 60 分钟，谁有空全文重听？我一般把录音扔给工具转成文字（Otter.ai 或者飞书的妙记都行），然后把文字丢给 AI，说一句"提取三个关键决策和明天的待办事项"。20 秒搞定。</p>
+
+      <h3>场景 3：看长文档看到睡着</h3>
+      <p>50 页的 PDF，老师或者老板让你"看完"。我从来不看完全文。丢给 Claude（它支持 200K 上下文，一本书都能吞），让它总结每章的核心观点，再挑出最重要的 5 个点。读摘要的时间不超过 3 分钟。需要具体引用的话，再回原文查。</p>
+
+      <div class="ad-in-article ad-inline"><span class="ad-label">📢 广告位</span></div>
+
+      <h3>场景 4：数据分析不会写代码</h3>
+      <p>很多人觉得 Python 是程序员的专利。但 ChatGPT 真的可以把这件事门槛降到很低。你只要跟它说"我有一个 Excel，里面有销售数据和日期，帮我算每个月的环比增长率并画个图"，它就会给你生成完整的代码，你复制到 Jupyter Notebook 或 Google Colab 运行就行。</p>
+
+      <h3>场景 5：做 PPT 做到手软</h3>
+      <p>Gamma（gamma.app）是最近发现的宝藏。输入主题和框架，它直接生成一份完整的 PPT，排版配色都在线。比自己从空白幻灯片开始做快太多了。虽然细节还得调，但至少省了搭框架的 80% 时间。</p>
+
+      <blockquote>说到底，AI 不是来取代你的。它是来帮你干掉那些重复、无聊、机械的工作，让你把精力放在真正需要判断力和创造力的事情上。</blockquote>
+    </div>
+
+    <!-- 广告：文章之间 -->
+    <div class="ad-wrap"><span class="ad-label">📢 广告位</span></div>
+
+    <!-- 文章4 -->
+    <div class="article">
+      <h2>Sora 还没上手？一文看懂现在的 AI 视频生成</h2>
+      <div class="meta">
+        <span>2026.06.06</span>
+        <span>阅读约 6 分钟</span>
+        <span>#AI科普</span>
+      </div>
+      <p>如果你还没用过 Sora，别急——不光你没用上，大部分人都没用上。OpenAI 从今年 2 月发完预告之后，到现在也没完全开放给所有人。</p>
+      <p>但市面上能用的 AI 视频工具已经不少了。而且说实话，有些的效果已经相当可以。</p>
+      <h3>先聊聊 Sora 到底强在哪</h3>
+      <p>Sora 跟其他视频生成工具最大的区别，用八个字概括就是——<strong>物理规律，它真的懂</strong>。以前我们用 Runway 或者 Pika 生成视频，最头疼的是什么？是物体变形。一个人的脸转到一半融化了，狗跑了两步变成了一团糊。这是因为那些模型本质上还是"图片+时序"，没有真正理解物体在三维空间里该怎么动。</p>
+      <p>Sora 不一样。它在训练阶段看过海量的视频，从里面"领悟"出了物体运动的规律。比如你给它"一个篮球砸到墙上然后反弹回来"，它生成的画面里，篮球确实会按照物理规律弹回来，而不是穿过墙。这一点以前的模型做不到。</p>
+
+      <div class="ad-in-article ad-inline"><span class="ad-label">📢 广告位</span></div>
+
+      <h3>那现在能用什么？</h3>
+      <p>如果你手痒想试 AI 视频，现阶段最好的选择是 Runway Gen-3（runwayml.com）。它生成的质量已经很接近 Sora 了，而且支持图生视频和视频编辑。缺点是要付费，起步价十几美刀一个月。</p>
+      <p>预算有限的话，可灵 AI（kling.kuaishou.com，快手的）是国内做得最好的。免费额度够你玩一阵子，生成速度快，而且对中文 prompt 的理解非常到位。字节的即梦 AI 也不错，但整体质量略逊一筹。</p>
+      <p>还有 Pika（pika.art），比较轻量，适合快速实验想法。但别指望用它做商业项目——细节还不够稳。</p>
+      <blockquote>说句实在话：目前的 AI 视频生成，做创意灵感和低预算的短视频素材已经够用了。但要做到电影级效果，还有挺长的路要走。可能需要等 Sora 全面开放，或者等下一波模型迭代。</blockquote>
+      <p>所以如果你是个做短视频的博主，现在就可以上手玩了。如果你是电影导演，那再等等吧。</p>
+    </div>
+
+    <!-- 底部广告 -->
+    <div class="ad-wrap"><span class="ad-label">📢 底部广告位</span></div>
+  </div>
 
   <footer>
-    <p>🤖 AI 工具导航 · 持续收录中</p>
-    <p style="margin-top:6px">觉得有用？<a href="#">分享给朋友</a></p>
+    <p>🤖 AI 工具导航 · 科普 · 持续更新中</p>
+    <p style="margin-top:6px">内容仅供参考，如有错误欢迎指正</p>
   </footer>
 </div>
 
 <button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
-// === 工具数据（按分类） ===
+// ===== 工具数据 =====
 const toolsData = [
-  // 💬 对话AI
-  {cat:"chat",icon:"🤖",name:"ChatGPT",desc:"OpenAI 开发的对话式 AI，支持文本生成、代码、分析等，全球最流行的 AI 助手。",tags:["免费","支持中文"],price:"freemium",url:"https://chat.openai.com"},
-  {cat:"chat",icon:"🦙",name:"Claude",desc:"Anthropic 出品，擅长长文本处理、深度分析、编程，上下文窗口达 200K。",tags:["长上下文","分析"],price:"freemium",url:"https://claude.ai"},
-  {cat:"chat",icon:"💬",name:"Gemini",desc:"Google 的 AI 助手，支持多模态输入（文字/图片/音频），与 Google 生态整合。",tags:["多模态","Google"],price:"free",url:"https://gemini.google.com"},
-  {cat:"chat",icon:"🔍",name:"DeepSeek",desc:"国产开源大模型，推理能力极强，支持超长上下文，API 价格低廉。",tags:["国产","开源"],price:"freemium",url:"https://chat.deepseek.com"},
-  {cat:"chat",icon:"🇨🇳",name:"通义千问",desc:"阿里巴巴出品的 AI 助手，支持文本、图片理解，与阿里生态深度整合。",tags:["国产","阿里"],price:"free",url:"https://tongyi.aliyun.com"},
-  {cat:"chat",icon:"🔴",name:"Kimi",desc:"月之暗面出品，支持超长上下文（200万字），擅长文档分析、联网搜索。",tags:["国产","长上下文"],price:"free",url:"https://kimi.moonshot.cn"},
-  {cat:"chat",icon:"✨",name:"豆包",desc:"字节跳动出品，支持文本/图片/语音交互，集成多种功能插件。",tags:["国产","字节"],price:"free",url:"https://www.doubao.com"},
-  {cat:"chat",icon:"🧠",name:"Grok",desc:"xAI（Elon Musk）开发的 AI 助手，实时联网，风格直白幽默。",tags:["联网","X平台"],price:"paid",url:"https://grok.com"},
-  {cat:"chat",icon:"💡",name:"Perplexity",desc:"AI 搜索引擎，自动联网搜索并给出带引用的回答，适合研究学习。",tags:["搜索","引用来源"],price:"freemium",url:"https://www.perplexity.ai"},
-
-  // 🎨 图像生成
-  {cat:"image",icon:"🎨",name:"Midjourney",desc:"世界顶级的 AI 图像生成工具，以艺术风格和高质量著称，通过 Discord 使用。",tags:["高质量","艺术风"],price:"paid",url:"https://www.midjourney.com"},
-  {cat:"image",icon:"🌌",name:"Stable Diffusion",desc:"开源图像生成模型，可本地部署，支持 ControlNet、LoRA 等扩展。",tags:["开源","可本地部署"],price:"free",url:"https://stability.ai"},
-  {cat:"image",icon:"🖼️",name:"DALL·E 3",desc:"OpenAI 的图像生成模型，集成在 ChatGPT Plus 中，文字理解能力强。",tags:["ChatGPT集成"],price:"paid",url:"https://openai.com/dall-e-3"},
-  {cat:"image",icon:"🇨🇳",name:"通义万相",desc:"阿里出品的 AI 绘图工具，支持文生图、图生图，免费额度充足。",tags:["国产","免费"],price:"free",url:"https://tongyi.aliyun.com/wanxiang"},
-  {cat:"image",icon:"🖌️",name:"文心一格",desc:"百度的 AI 绘画工具，支持多种绘画风格，中文理解优秀。",tags:["国产","百度"],price:"freemium",url:"https://yige.baidu.com"},
-  {cat:"image",icon:"✨",name:"Adobe Firefly",desc:"Adobe 出品的 AI 图像工具，与 Photoshop 深度整合，商用友好。",tags:["商用","Adobe"],price:"freemium",url:"https://firefly.adobe.com"},
-  {cat:"image",icon:"🎭",name:"Leonardo.ai",desc:"功能丰富的 AI 绘图平台，提供模型训练、实时生成等高级功能。",tags:["模型训练","实时"],price:"freemium",url:"https://leonardo.ai"},
-  {cat:"image",icon:"🔄",name:"Clipdrop",desc:"StabilityAI 推出的图像工具集，包含去背景、扩图、超分等实用功能。",tags:["工具集","去背景"],price:"freemium",url:"https://clipdrop.co"},
-
-  // 🎬 视频生成
-  {cat:"video",icon:"🎥",name:"Sora",desc:"OpenAI 的文生视频模型，可生成长达 60 秒的高质量视频，物理模拟出色。",tags:["高质量","60秒"],price:"paid",url:"https://openai.com/sora"},
-  {cat:"video",icon:"⚡",name:"Runway Gen-3",desc:"专业级 AI 视频生成平台，支持文生视频、图生视频、视频编辑。",tags:["专业级","编辑"],price:"paid",url:"https://runwayml.com"},
-  {cat:"video",icon:"🎬",name:"Pika Labs",desc:"易于使用的 AI 视频生成工具，支持多种风格和视频编辑功能。",tags:["易用","编辑"],price:"freemium",url:"https://pika.art"},
-  {cat:"video",icon:"🎞️",name:"可灵 AI",desc:"快手的 AI 视频生成工具，支持文生视频和图生视频，效果出色。",tags:["国产","快手"],price:"freemium",url:"https://kling.kuaishou.com"},
-  {cat:"video",icon:"🇨🇳",name:"即梦 AI",desc:"字节跳动的 AI 视频生成工具，支持多种视频创作模式。",tags:["国产","字节"],price:"freemium",url:"https://jimeng.jianying.com"},
-  {cat:"video",icon:"🎭",name:"HeyGen",desc:"AI 数字人视频生成，上传照片即可生成会说话的视频，适合营销。",tags:["数字人","营销"],price:"paid",url:"https://www.heygen.com"},
-
-  // 🎵 音频/音乐
-  {cat:"audio",icon:"🎵",name:"Suno",desc:"AI 音乐生成工具，输入歌词和风格即可生成完整歌曲，支持多种音乐风格。",tags:["音乐生成","完整歌曲"],price:"freemium",url:"https://suno.com"},
-  {cat:"audio",icon:"🎶",name:"Udio",desc:"高品质 AI 音乐生成，音质出色，支持更精细的音乐风格控制。",tags:["高品质","风格控制"],price:"freemium",url:"https://www.udio.com"},
-  {cat:"audio",icon:"🎤",name:"ElevenLabs",desc:"顶级的 AI 语音合成工具，支持多语言、声音克隆、情感表达。",tags:["语音合成","声音克隆"],price:"freemium",url:"https://elevenlabs.io"},
-  {cat:"audio",icon:"🗣️",name:"Fish Audio",desc:"开源的语音合成与声音克隆工具，支持多种语言和口音。",tags:["开源","语音克隆"],price:"freemium",url:"https://fish.audio"},
-  {cat:"audio",icon:"🎙️",name:"剪映 AI",desc:"剪映内置的 AI 语音/音乐工具，支持文字转语音、AI 音乐生成。",tags:["国产","免费"],price:"free",url:"https://jianying.com"},
-
-  // 💻 编程助手
-  {cat:"code",icon:"💻",name:"GitHub Copilot",desc:"GitHub 与 OpenAI 合作的 AI 编程助手，集成在 VS Code 等 IDE 中。",tags:["IDE集成","自动补全"],price:"paid",url:"https://github.com/features/copilot"},
-  {cat:"code",icon:"🔧",name:"Cursor",desc:"AI-first 的代码编辑器，内置 GPT-4，支持多文件编辑和代码库理解。",tags:["编辑器","GPT-4"],price:"freemium",url:"https://cursor.sh"},
-  {cat:"code",icon:"🤖",name:"Windsurf",desc:"新一代 AI 编程 IDE，支持 Agent 模式自动完成复杂编程任务。",tags:["IDE","Agent"],price:"freemium",url:"https://codeium.com/windsurf"},
-  {cat:"code",icon:"🚀",name:"Claude Code",desc:"Anthropic 推出的命令行编程助手，直接在终端中帮助编程。",tags:["CLI","终端"],price:"paid",url:"https://docs.anthropic.com/en/docs/claude-code"},
-  {cat:"code",icon:"⚡",name:"v0.dev",desc:"Vercel 出品的 AI 前端生成工具，输入描述即可生成 UI 组件代码。",tags:["前端","React"],price:"freemium",url:"https://v0.dev"},
-  {cat:"code",icon:"🎨",name:"截图转代码",desc:"将设计截图通过 AI 转换为前端代码，支持多种框架和样式。",tags:["截图转代码","设计"],price:"freemium",url:"https://screenshot-to-code.com"},
-
-  // ✍️ 写作/文案
-  {cat:"write",icon:"✍️",name:"Jasper",desc:"专业的 AI 写作工具，专为营销、博客、社交文案优化，有多种模板。",tags:["营销","模板"],price:"paid",url:"https://www.jasper.ai"},
-  {cat:"write",icon:"📝",name:"Copy.ai",desc:"AI 文案生成工具，快速生成营销文案、邮件、广告语等。",tags:["文案","营销"],price:"freemium",url:"https://www.copy.ai"},
-  {cat:"write",icon:"📖",name:"Notion AI",desc:"Notion 内置的 AI 写作助手，支持续写、改写、翻译、摘要等。",tags:["笔记集成","写作"],price:"paid",url:"https://www.notion.so/product/ai"},
-  {cat:"write",icon:"📄",name:"Gamma",desc:"AI 演示文稿/文档生成，输入主题即可生成 PPT/文档。",tags:["PPT","演示"],price:"freemium",url:"https://gamma.app"},
-  {cat:"write",icon:"🌏",name:"DeepL Write",desc:"AI 写作润色工具，支持多种语言，擅长翻译和写作改进。",tags:["翻译","润色"],price:"freemium",url:"https://www.deepl.com/write"},
-
-  // 🎯 设计/创意
-  {cat:"design",icon:"🎨",name:"Canva AI",desc:"Canva 内置的 AI 设计功能，AI 生成图片、模板、智能抠图等。",tags:["设计","模板"],price:"freemium",url:"https://www.canva.com"},
-  {cat:"design",icon:"🎭",name:"LogoAI",desc:"AI Logo 设计工具，输入品牌名即可生成多种 Logo 方案。",tags:["Logo","品牌"],price:"paid",url:"https://www.logoai.com"},
-  {cat:"design",icon:"🎬",name:"Remove.bg",desc:"AI 智能去背景工具，一键去除图片背景，支持批量处理。",tags:["去背景","图片"],price:"freemium",url:"https://www.remove.bg"},
-  {cat:"design",icon:"🖼️",name:"Krikey AI",desc:"AI 3D 内容生成，生成 3D 模型和动画，支持游戏开发。",tags:["3D","动画"],price:"freemium",url:"https://www.krikey.ai"},
-  {cat:"design",icon:"🎯",name:"Uizard",desc:"AI 界面设计工具，截图转设计稿，快速原型生成。",tags:["UI设计","原型"],price:"freemium",url:"https://uizard.io"},
-
-  // ⚡ 效率工具
-  {cat:"productivity",icon:"📧",name:"Superhuman AI",desc:"AI 智能邮件客户端，自动生成回复、邮件摘要、任务排序。",tags:["邮件","效率"],price:"paid",url:"https://superhuman.com"},
-  {cat:"productivity",icon:"📋",name:"Otter.ai",desc:"AI 会议助手，实时转写、自动总结、提取行动项。",tags:["会议记录","转写"],price:"freemium",url:"https://otter.ai"},
-  {cat:"productivity",icon:"📊",name:"Gamma",desc:"AI 生成演示文稿、文档、网页，快速将想法转化为视觉内容。",tags:["演示","文档"],price:"freemium",url:"https://gamma.app"},
-  {cat:"productivity",icon:"📅",name:"Motion",desc:"AI 日程管理工具，自动安排日程、优化工作时间。",tags:["日程","GTD"],price:"paid",url:"https://www.usemotion.com"},
-  {cat:"productivity",icon:"📝",name:"Mem.ai",desc:"AI 笔记应用，自动关联和组织笔记内容，智能搜索。",tags:["笔记","知识管理"],price:"freemium",url:"https://mem.ai"},
-
-  // 🔧 其他
-  {cat:"other",icon:"🔬",name:"Hugging Face",desc:"最大的 AI 模型社区和平台，数万个开源模型和数据集，可在线体验。",tags:["开源","模型社区"],price:"free",url:"https://huggingface.co"},
-  {cat:"other",icon:"📊",name:"Character.AI",desc:"AI 角色扮演平台，与各种 AI 角色对话互动。",tags:["角色扮演","娱乐"],price:"free",url:"https://character.ai"},
-  {cat:"other",icon:"🌐",name:"POE",desc:"Quora 出品的 AI 平台聚合器，一站式使用多个 AI 模型。",tags:["聚合","多模型"],price:"freemium",url:"https://poe.com"},
+  {cat:"chat",icon:"🤖",name:"ChatGPT",desc:"OpenAI 的对话式 AI，文本生成、代码、分析，全球最流行的 AI 助手。",tags:["免费","支持中文"],price:"freemium",url:"https://chat.openai.com"},
+  {cat:"chat",icon:"🦙",name:"Claude",desc:"Anthropic 出品，擅长长文本和深度分析，上下文窗口可达 200K。",tags:["长文本","分析"],price:"freemium",url:"https://claude.ai"},
+  {cat:"chat",icon:"💬",name:"Gemini",desc:"Google 的 AI 助手，支持文字/图片/音频多模态输入。",tags:["多模态","免费"],price:"free",url:"https://gemini.google.com"},
+  {cat:"chat",icon:"🔍",name:"DeepSeek",desc:"国产开源大模型，推理能力极强，API 价格低廉。",tags:["国产","开源"],price:"freemium",url:"https://chat.deepseek.com"},
+  {cat:"chat",icon:"🇨🇳",name:"通义千问",desc:"阿里出品的 AI 助手，与阿里生态深度整合。",tags:["国产","免费"],price:"free",url:"https://tongyi.aliyun.com"},
+  {cat:"chat",icon:"🔴",name:"Kimi",desc:"月之暗面出品，200万字超长上下文，擅长文档分析。",tags:["国产","长文本"],price:"free",url:"https://kimi.moonshot.cn"},
+  {cat:"chat",icon:"✨",name:"豆包",desc:"字节跳动出品，支持文本/图片/语音交互。",tags:["国产","免费"],price:"free",url:"https://www.doubao.com"},
+  {cat:"chat",icon:"💡",name:"Perplexity",desc:"AI 搜索引擎，自动联网搜索并给出带引用的回答。",tags:["搜索","引用"],price:"freemium",url:"https://www.perplexity.ai"},
+  {cat:"image",icon:"🎨",name:"Midjourney",desc:"顶级 AI 图像生成，艺术风格和质量极高，通过 Discord 使用。",tags:["高质量","艺术"],price:"paid",url:"https://www.midjourney.com"},
+  {cat:"image",icon:"🌌",name:"Stable Diffusion",desc:"开源图像生成模型，可本地部署，支持各种扩展。",tags:["开源","本地化"],price:"free",url:"https://stability.ai"},
+  {cat:"image",icon:"🖼️",name:"DALL·E 3",desc:"OpenAI 的图像模型，ChatGPT Plus 内置，文字理解力强。",tags:["ChatGPT","集成"],price:"paid",url:"https://openai.com/dall-e-3"},
+  {cat:"image",icon:"🇨🇳",name:"通义万相",desc:"阿里 AI 绘图工具，免费额度充足，中文友好。",tags:["国产","免费"],price:"free",url:"https://tongyi.aliyun.com/wanxiang"},
+  {cat:"image",icon:"🖌️",name:"文心一格",desc:"百度 AI 绘画，支持多种风格，中文理解优秀。",tags:["国产","百度"],price:"freemium",url:"https://yige.baidu.com"},
+  {cat:"image",icon:"✨",name:"Adobe Firefly",desc:"Adobe 的 AI 图像工具，与 Photoshop 深度整合。",tags:["商用","Adobe"],price:"freemium",url:"https://firefly.adobe.com"},
+  {cat:"image",icon:"🔄",name:"Clipdrop",desc:"StabilityAI 的图像工具集，去背景、扩图、超分等。",tags:["工具集","免费"],price:"freemium",url:"https://clipdrop.co"},
+  {cat:"video",icon:"🎥",name:"Sora",desc:"OpenAI 文生视频，可生成 60 秒高质量视频，物理模拟出色。",tags:["高质量","长视频"],price:"paid",url:"https://openai.com/sora"},
+  {cat:"video",icon:"⚡",name:"Runway Gen-3",desc:"专业 AI 视频生成平台，支持编辑和多种风格。",tags:["专业","编辑"],price:"paid",url:"https://runwayml.com"},
+  {cat:"video",icon:"🎬",name:"Pika",desc:"轻量 AI 视频生成，适合快速实验创意。",tags:["轻量","易用"],price:"freemium",url:"https://pika.art"},
+  {cat:"video",icon:"🎞️",name:"可灵 AI",desc:"快手的 AI 视频生成，效果好，对中文 prompt 理解到位。",tags:["国产","免费额度"],price:"freemium",url:"https://kling.kuaishou.com"},
+  {cat:"video",icon:"🇨🇳",name:"即梦 AI",desc:"字节跳动的 AI 视频生成，多种创作模式。",tags:["国产","免费"],price:"freemium",url:"https://jimeng.jianying.com"},
+  {cat:"audio",icon:"🎵",name:"Suno",desc:"AI 音乐生成，输入歌词和风格即可生成完整歌曲。",tags:["音乐","创作"],price:"freemium",url:"https://suno.com"},
+  {cat:"audio",icon:"🎤",name:"ElevenLabs",desc:"顶级 AI 语音合成，支持多语言、声音克隆。",tags:["语音","克隆"],price:"freemium",url:"https://elevenlabs.io"},
+  {cat:"audio",icon:"🗣️",name:"Fish Audio",desc:"开源语音合成与声音克隆，支持多种语言。",tags:["开源","免费"],price:"freemium",url:"https://fish.audio"},
+  {cat:"code",icon:"💻",name:"GitHub Copilot",desc:"GitHub 的 AI 编程助手，支持 VS Code 等 IDE。",tags:["IDE","补全"],price:"paid",url:"https://github.com/features/copilot"},
+  {cat:"code",icon:"🔧",name:"Cursor",desc:"AI-first 代码编辑器，内置 GPT-4，支持多文件编辑。",tags:["编辑器","GPT-4"],price:"freemium",url:"https://cursor.sh"},
+  {cat:"code",icon:"🤖",name:"Windsurf",desc:"新一代 AI 编程 IDE，Agent 模式自动完成复杂任务。",tags:["IDE","Agent"],price:"freemium",url:"https://codeium.com/windsurf"},
+  {cat:"code",icon:"🚀",name:"Claude Code",desc:"Anthropic 的终端编程助手，适合命令行开发者。",tags:["CLI","终端"],price:"paid",url:"https://docs.anthropic.com/en/docs/claude-code"},
+  {cat:"write",icon:"✍️",name:"Jasper",desc:"专业 AI 写作工具，营销文案模板丰富。",tags:["营销","模板"],price:"paid",url:"https://www.jasper.ai"},
+  {cat:"write",icon:"📖",name:"Notion AI",desc:"Notion 内置的 AI 写作助手，续写、翻译、摘要。",tags:["笔记","写作"],price:"paid",url:"https://www.notion.so/product/ai"},
+  {cat:"write",icon:"📄",name:"Gamma",desc:"AI 生成 PPT/文档，输入主题即可出稿。",tags:["PPT","演示"],price:"freemium",url:"https://gamma.app"},
+  {cat:"write",icon:"🌏",name:"DeepL Write",desc:"AI 写作润色与翻译，支持多种语言。",tags:["翻译","润色"],price:"freemium",url:"https://www.deepl.com/write"},
+  {cat:"design",icon:"🎨",name:"Canva AI",desc:"Canva 的 AI 设计功能，图片生成、智能抠图。",tags:["设计","模板"],price:"freemium",url:"https://www.canva.com"},
+  {cat:"design",icon:"🎭",name:"Remove.bg",desc:"AI 去背景，一键搞定，支持批量处理。",tags:["去背景","免费"],price:"freemium",url:"https://www.remove.bg"},
+  {cat:"design",icon:"🎯",name:"Uizard",desc:"AI 界面设计，截图转设计稿，快速原型生成。",tags:["UI","原型"],price:"freemium",url:"https://uizard.io"},
+  {cat:"productivity",icon:"📧",name:"Superhuman",desc:"AI 智能邮件客户端，自动回复和摘要。",tags:["邮件","效率"],price:"paid",url:"https://superhuman.com"},
+  {cat:"productivity",icon:"📋",name:"Otter.ai",desc:"AI 会议助手，实时转写、自动总结。",tags:["会议","转写"],price:"freemium",url:"https://otter.ai"},
+  {cat:"productivity",icon:"📝",name:"Mem.ai",desc:"AI 笔记应用，自动关联和组织笔记。",tags:["笔记","知识管理"],price:"freemium",url:"https://mem.ai"},
 ];
 
-// === 渲染 ===
-function getPriceTag(price) {
-  if(price==='free') return 'tag-free';
-  if(price==='paid') return 'tag-paid';
-  return 'tag-freemium';
-}
-
-function getPriceLabel(price) {
-  if(price==='free') return '免费';
-  if(price==='paid') return '付费';
-  return '免费+付费';
-}
-
+// ===== 渲染工具 =====
 function renderTools(cat) {
   const container = document.getElementById('toolContainer');
-  const searchVal = document.getElementById('searchInput').value.toLowerCase().trim();
+  const q = document.getElementById('searchInput').value.toLowerCase().trim();
 
-  let filtered = toolsData;
-  if(cat && cat !== 'all') filtered = filtered.filter(t => t.cat === cat);
-  if(searchVal) filtered = filtered.filter(t => 
-    t.name.toLowerCase().includes(searchVal) || 
-    t.desc.toLowerCase().includes(searchVal) ||
-    t.tags.some(tag => tag.toLowerCase().includes(searchVal))
-  );
+  let filtered = cat && cat!=='all' ? toolsData.filter(t => t.cat===cat) : [...toolsData];
+  if(q) filtered = filtered.filter(t => t.name.toLowerCase().includes(q) || t.desc.toLowerCase().includes(q) || t.tags.some(tag=>tag.toLowerCase().includes(q)));
 
-  // 按分类分组
-  const catOrder = ['chat','image','video','audio','code','write','design','productivity','other'];
-  const catNames = {chat:'💬 对话AI',image:'🎨 图像生成',video:'🎬 视频生成',audio:'🎵 音频/音乐',code:'💻 编程助手',write:'✍️ 写作/文案',design:'🎯 设计/创意',productivity:'⚡ 效率工具',other:'🔧 其他'};
+  const catOrder=['chat','image','video','audio','code','write','design','productivity'];
+  const catNames={chat:'💬 对话 AI',image:'🎨 图像生成',video:'🎬 视频生成',audio:'🎵 音频',code:'💻 编程',write:'✍️ 文案',design:'🎯 设计',productivity:'⚡ 效率'};
+  const priceLabels={free:'免费',paid:'付费',freemium:'免费+'};
+  const priceCls={free:'free',paid:'paid',freemium:'freemium'};
 
   const grouped = {};
-  filtered.forEach(t => {
-    if(!grouped[t.cat]) grouped[t.cat] = [];
-    grouped[t.cat].push(t);
-  });
+  filtered.forEach(t => { if(!grouped[t.cat]) grouped[t.cat]=[]; grouped[t.cat].push(t); });
 
-  if(Object.keys(grouped).length === 0) {
-    container.innerHTML = `<div class="empty-state"><div class="icon">🔍</div><p>没有找到匹配的工具</p><p style="margin-top:8px;font-size:13px;color:#6b7280">换个关键词试试</p></div>`;
+  if(Object.keys(grouped).length===0) {
+    container.innerHTML = `<div class="empty-state"><p style="font-size:32px;margin-bottom:8px">🔍</p><p>没找到匹配的工具</p></div>`;
     return;
   }
 
-  let html = '';
-  for(const c of catOrder) {
-    if(!grouped[c]) continue;
-    const tools = grouped[c];
-    const adInserted = html.includes('ad-slot');
-    html += `
-      <div class="category" data-cat="${c}">
-        <div class="category-header">
-          <span class="category-icon">${catNames[c].split(' ')[0]}</span>
-          <span class="category-title">${catNames[c].split(' ').slice(1).join(' ')}</span>
-          <span class="category-count">${tools.length} 个工具</span>
-        </div>
-        <div class="tool-grid">
-          ${tools.map(t => `
-            <div class="tool-card" onclick="window.open('${t.url}','_blank')">
-              <div class="tool-card-top">
-                <div class="tool-icon">${t.icon}</div>
-                <div class="tool-info">
-                  <div class="tool-name">${t.name}</div>
-                  <div class="tool-desc">${t.desc}</div>
-                </div>
-              </div>
-              <div class="tool-tags">
-                ${t.tags.map(tag => `<span class="tool-tag">${tag}</span>`).join('')}
-                <span class="tool-tag ${getPriceTag(t.price)}">${getPriceLabel(t.price)}</span>
-              </div>
-              <span class="tool-link">访问官网</span>
-            </div>
-          `).join('')}
-        </div>
-      </div>
-      ${!adInserted && c === catOrder[Math.floor(catOrder.indexOf(c)/1.5)] ? `<div class="ad-slot"><span>📢 中间广告位 — 替换为 AdSense 代码</span></div>` : ''}
-    `;
-  }
-
+  let html='';
+  catOrder.forEach(c => {
+    if(!grouped[c]) return;
+    html += `<div class="category"><div class="category-header"><span class="cat-icon">${catNames[c].split(' ')[0]}</span><span class="cat-title">${catNames[c].split(' ').slice(1).join(' ')}</span><span class="cat-count">${grouped[c].length}</span></div><div class="tool-grid">`;
+    grouped[c].forEach(t => {
+      html += `<div class="tool-card" onclick="window.open('${t.url}','_blank')"><div class="tc-top"><div class="tc-icon">${t.icon}</div><div class="tc-info"><div class="tc-name">${t.name}</div><div class="tc-desc">${t.desc}</div></div></div><div class="tc-tags">${t.tags.map(tag=>`<span class="tc-tag">${tag}</span>`).join('')}<span class="tc-tag ${priceCls[t.price]}">${priceLabels[t.price]}</span></div><span class="tc-link">打开</span></div>`;
+    });
+    html += '</div></div>';
+  });
   container.innerHTML = html;
 }
 
-// === 分类切换 ===
+// ===== 分类切换 =====
 function switchCategory(cat, btn) {
   document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
   renderTools(cat);
 }
 
-// === 搜索 ===
+// ===== 搜索 =====
 function filterTools() {
-  const activeTab = document.querySelector('.cat-tab.active');
-  const cat = activeTab ? activeTab.dataset.cat : 'all';
-  renderTools(cat);
+  const active = document.querySelector('.cat-tab.active');
+  renderTools(active ? active.dataset.cat : 'all');
 }
 
-// === 回到顶部 ===
-window.addEventListener('scroll', () => {
+// ===== 回到顶部 =====
+window.addEventListener('scroll', ()=>{
   document.getElementById('backTop').style.display = window.scrollY > 300 ? 'flex' : 'none';
 });
 
-// === 初始化 ===
+// ===== 初始化 =====
 renderTools('all');
 </script>
 
