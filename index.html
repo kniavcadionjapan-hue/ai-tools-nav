@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI 工具导航 - 收录100+ AI工具 + 80篇AI科普文章</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <meta name="description" content="精选 AI 工具导航站，收录 ChatGPT、Midjourney、Claude、DeepSeek 等 100+ 热门 AI 工具。80 篇原创 AI 科普，带你了解人工智能。">
 <meta name="keywords" content="AI工具,AI导航,ChatGPT,人工智能,AI科普,Midjourney,Stable Diffusion,Claude,DeepSeek">
 <meta property="og:title" content="AI 工具导航 - 100+ AI工具 + 科普">
@@ -269,7 +273,14 @@ footer{text-align:center;padding:30px 20px;color:#4b5563;font-size:13px;border-t
   </div>
 </header>
 
+<div 
+<div class="main-layout">
+  <aside class="sidebar">
+    <div class="sidebar-title">🔥 推薦閱讀</div><div class="side-card" onclick="showFullArticle(0)"><div class="sc-icon">💬</div><div class="sc-title">ChatGPT 其实不是"人"——我们怎么老爱跟AI聊天？</div></div><div class="side-card" onclick="showFullArticle(1)"><div class="sc-icon">💼</div><div class="sc-title">AI 真的会取代你的工作吗？我用 12 个行业的数据告诉你真相</div></div><div class="side-card" onclick="showFullArticle(2)"><div class="sc-icon">💬</div><div class="sc-title">为什么有时候 ChatGPT 看起来像个傻子？三个底层原因</div></div><div class="side-card" onclick="showFullArticle(3)"><div class="sc-icon">📖</div><div class="sc-title">你每天用多少 AI 服务？可能比你意识到的多一倍</div></div><div class="side-card" onclick="showFullArticle(4)"><div class="sc-icon">💬</div><div class="sc-title">大模型是怎么"长大"的？从 GPT-1 到 GPT-4 的进化史</div></div><div class="side-card" onclick="showFullArticle(5)"><div class="sc-icon">💬</div><div class="sc-title">ChatGPT Plus 到底值不值这 20 美元？半年真实评测</div></div><div class="side-card" onclick="showFullArticle(6)"><div class="sc-icon">💬</div><div class="sc-title">很多人不知道的 7 个 ChatGPT 隐藏功能</div></div><div class="side-card" onclick="showFullArticle(7)"><div class="sc-icon">💬</div><div class="sc-title">给 Claude 的提示词怎么写效果最好？</div></div>
+  </aside>
+  <main class="main-content">
 <div class="container">
+
 
   <!-- ==================== 顶部广告 ==================== -->
   <div class="ad-wrap"><span class="ad-label">📢 广告位</span></div>
@@ -609,6 +620,13 @@ tool-header">
   <div id="toolContainer"></div>
 
   <div class="ad-wrap"><span class="ad-label">📢 广告位</span></div>
+</div>
+
+  </main>
+  <aside class="sidebar-right">
+    {right_html}
+  </aside>
+</div>
 
   <!-- ==================== 文章区 ==================== -->
 
@@ -831,8 +849,9 @@ function showFullArticle(idx) {
   if(!a) return;
   const body = document.body;
   const modal = document.createElement('div');
-  modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);z-index:9999;overflow-y:auto;padding:40px 16px';
-  modal.innerHTML = '<div style="max-width:700px;margin:auto;background:#0f0f14;border:1px solid #1c1c24;border-radius:12px;padding:24px;position:relative"><button onclick="this.parentElement.parentElement.remove()" style="position:absolute;top:12px;right:16px;background:none;border:none;color:#71717a;font-size:22px;cursor:pointer">✕</button><h2 style="font-size:20px;color:#f4f4f5;margin-bottom:12px;padding-right:30px">'+a[0]+'</h2><p style="font-size:15px;color:#d4d4d8;line-height:1.8">'+a[1]+'</p></div>';
+  modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);z-index:9999;overflow-y:auto;padding:50px 20px';
+  modal.innerHTML = '<div style="max-width:760px;margin:auto;background:#0f0f14;border:1px solid #27272a;border-radius:14px;padding:32px;position:relative;font-family:Noto Sans SC,-apple-system,sans-serif;font-size:17px;line-height:2"><button onclick="this.parentElement.parentElement.remove()" style="position:absolute;top:16px;right:20px;background:none;border:none;color:#52525b;font-size:24px;cursor:pointer;transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#52525b'">✕</button><h2 style="font-size:22px;color:#f4f4f5;margin-bottom:16px;padding-right:40px;font-weight:700">'+a[0]+'</h2><p style="font-size:17px;color:#d4d4d8;line-height:2">'+a[1]+'</p></div>';
+  modal.addEventListener('click', function(e){if(e.target===this)this.remove()});
   body.appendChild(modal);
   modal.addEventListener('click', e => { if(e.target===modal) modal.remove() });
 }
