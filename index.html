@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具导航 - 精选AI工具大全</title>
+<meta name="description" content="精选AI工具导航站，收录 ChatGPT、Midjourney、Stable Diffusion 等热门 AI 工具，分类整理，每日更新。">
+<meta name="keywords" content="AI工具,AI导航,ChatGPT,Midjourney,人工智能工具,AI网站">
+<!-- Google AdSense - 替换为你的ID -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0f;color:#e0e0e0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;min-height:100vh}
+header{background:linear-gradient(180deg,#0f0f1a 0%,#0a0a0f 100%);padding:60px 20px 40px;text-align:center;border-bottom:1px solid #1a1a2e}
+header h1{font-size:32px;font-weight:700;background:linear-gradient(135deg,#818cf8,#c084fc,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:10px}
+header p{color:#6b7280;font-size:15px}
+header .search-box{margin-top:24px;max-width:500px;margin-left:auto;margin-right:auto}
+.search-box input{width:100%;padding:14px 20px;border-radius:12px;border:1px solid #1f2937;background:#111118;color:#e0e0e0;font-size:15px;outline:none;transition:all .3s}
+.search-box input:focus{border-color:#818cf8;box-shadow:0 0 0 3px rgba(129,140,248,.15)}
+.search-box input::placeholder{color:#4b5563}
+.container{max-width:1200px;margin:0 auto;padding:24px 20px 60px}
+/* 广告位 */
+.ad-slot{background:linear-gradient(135deg,#111118,#16162a);border:1px solid #1f2937;border-radius:12px;text-align:center;padding:24px;margin:24px 0;color:#4b5563;font-size:13px;min-height:90px;display:flex;align-items:center;justify-content:center}
+.ad-slot span{opacity:.5}
+.ad-slot-header{margin-bottom:0;margin-top:0}
+/* 分类导航 */
+.category-tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 0 16px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.category-tabs::-webkit-scrollbar{display:none}
+.cat-tab{padding:8px 20px;border-radius:20px;border:1px solid #1f2937;background:transparent;color:#9ca3af;font-size:14px;cursor:pointer;white-space:nowrap;transition:all .2s;flex-shrink:0}
+.cat-tab:hover{border-color:#818cf8;color:#e0e0e0}
+.cat-tab.active{background:linear-gradient(135deg,#818cf8,#c084fc);color:#fff;border-color:transparent}
+/* 分类区 */
+.category{margin-bottom:40px}
+.category-header{display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid #1a1a2e}
+.category-icon{font-size:22px}
+.category-title{font-size:20px;font-weight:600;color:#f0f0f0}
+.category-count{font-size:13px;color:#6b7280;margin-left:auto}
+/* 工具卡片网格 */
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.tool-card{background:#111118;border:1px solid #1f2937;border-radius:12px;padding:16px;transition:all .25s;cursor:pointer;position:relative;overflow:hidden}
+.tool-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#818cf8,transparent);opacity:0;transition:opacity .3s}
+.tool-card:hover{transform:translateY(-3px);border-color:#374151;box-shadow:0 8px 30px rgba(0,0,0,.3)}
+.tool-card:hover::before{opacity:1}
+.tool-card-top{display:flex;align-items:flex-start;gap:12px}
+.tool-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.tool-info{flex:1;min-width:0}
+.tool-name{font-size:15px;font-weight:600;color:#f0f0f0;margin-bottom:4px}
+.tool-desc{font-size:13px;color:#6b7280;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tool-tags{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.tool-tag{font-size:11px;padding:2px 8px;border-radius:4px;background:rgba(129,140,248,.1);color:#818cf8;border:1px solid rgba(129,140,248,.15)}
+.tool-link{display:inline-block;margin-top:10px;font-size:13px;color:#818cf8;text-decoration:none;transition:color .2s}
+.tool-link:hover{color:#c084fc}
+.tool-link::after{content:' →'}
+/* 付费标签 */
+.tag-free{background:rgba(16,185,129,.1)!important;color:#10b981!important;border-color:rgba(16,185,129,.2)!important}
+.tag-paid{background:rgba(245,158,11,.1)!important;color:#f59e0b!important;border-color:rgba(245,158,11,.2)!important}
+.tag-freemium{background:rgba(139,92,246,.1)!important;color:#8b5cf6!important;border-color:rgba(139,92,246,.2)!important}
+/* 页脚 */
+footer{text-align:center;padding:30px 20px;color:#4b5563;font-size:13px;border-top:1px solid #1a1a2e;margin-top:20px}
+footer a{color:#818cf8;text-decoration:none}
+/* 回到顶部 */
+#backTop{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:#1f2937;border:1px solid #374151;color:#e0e0e0;font-size:20px;cursor:pointer;display:none;align-items:center;justify-content:center;transition:all .2s;z-index:100}
+#backTop:hover{background:#818cf8;border-color:#818cf8}
+/* 空结果 */
+.empty-state{text-align:center;padding:60px 20px;color:#4b5563}
+.empty-state .icon{font-size:48px;margin-bottom:12px}
+@media(max-width:640px){
+  header h1{font-size:24px}
+  .tool-grid{grid-template-columns:1fr}
+  .cat-tab{padding:6px 14px;font-size:13px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🤖 AI 工具导航</h1>
+  <p>收录最实用的 AI 工具，分类整理，持续更新</p>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="搜索工具名称或关键词..." oninput="filterTools()">
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- 顶部广告 -->
+  <div class="ad-slot ad-slot-header"><span>📢 广告位 — 替换为你的 AdSense 代码</span></div>
+
+  <!-- 分类标签 -->
+  <div class="category-tabs" id="catTabs">
+    <button class="cat-tab active" data-cat="all" onclick="switchCategory('all',this)">🔥 全部</button>
+    <button class="cat-tab" data-cat="chat" onclick="switchCategory('chat',this)">💬 对话AI</button>
+    <button class="cat-tab" data-cat="image" onclick="switchCategory('image',this)">🎨 图像生成</button>
+    <button class="cat-tab" data-cat="video" onclick="switchCategory('video',this)">🎬 视频生成</button>
+    <button class="cat-tab" data-cat="audio" onclick="switchCategory('audio',this)">🎵 音频/音乐</button>
+    <button class="cat-tab" data-cat="code" onclick="switchCategory('code',this)">💻 编程助手</button>
+    <button class="cat-tab" data-cat="write" onclick="switchCategory('write',this)">✍️ 写作/文案</button>
+    <button class="cat-tab" data-cat="design" onclick="switchCategory('design',this)">🎯 设计/创意</button>
+    <button class="cat-tab" data-cat="productivity" onclick="switchCategory('productivity',this)">⚡ 效率工具</button>
+    <button class="cat-tab" data-cat="other" onclick="switchCategory('other',this)">🔧 其他</button>
+  </div>
+
+  <div id="toolContainer"></div>
+
+  <!-- 底部广告 -->
+  <div class="ad-slot"><span>📢 底部广告位 — 替换为 AdSense 代码</span></div>
+
+  <footer>
+    <p>🤖 AI 工具导航 · 持续收录中</p>
+    <p style="margin-top:6px">觉得有用？<a href="#">分享给朋友</a></p>
+  </footer>
+</div>
+
+<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// === 工具数据（按分类） ===
+const toolsData = [
+  // 💬 对话AI
+  {cat:"chat",icon:"🤖",name:"ChatGPT",desc:"OpenAI 开发的对话式 AI，支持文本生成、代码、分析等，全球最流行的 AI 助手。",tags:["免费","支持中文"],price:"freemium",url:"https://chat.openai.com"},
+  {cat:"chat",icon:"🦙",name:"Claude",desc:"Anthropic 出品，擅长长文本处理、深度分析、编程，上下文窗口达 200K。",tags:["长上下文","分析"],price:"freemium",url:"https://claude.ai"},
+  {cat:"chat",icon:"💬",name:"Gemini",desc:"Google 的 AI 助手，支持多模态输入（文字/图片/音频），与 Google 生态整合。",tags:["多模态","Google"],price:"free",url:"https://gemini.google.com"},
+  {cat:"chat",icon:"🔍",name:"DeepSeek",desc:"国产开源大模型，推理能力极强，支持超长上下文，API 价格低廉。",tags:["国产","开源"],price:"freemium",url:"https://chat.deepseek.com"},
+  {cat:"chat",icon:"🇨🇳",name:"通义千问",desc:"阿里巴巴出品的 AI 助手，支持文本、图片理解，与阿里生态深度整合。",tags:["国产","阿里"],price:"free",url:"https://tongyi.aliyun.com"},
+  {cat:"chat",icon:"🔴",name:"Kimi",desc:"月之暗面出品，支持超长上下文（200万字），擅长文档分析、联网搜索。",tags:["国产","长上下文"],price:"free",url:"https://kimi.moonshot.cn"},
+  {cat:"chat",icon:"✨",name:"豆包",desc:"字节跳动出品，支持文本/图片/语音交互，集成多种功能插件。",tags:["国产","字节"],price:"free",url:"https://www.doubao.com"},
+  {cat:"chat",icon:"🧠",name:"Grok",desc:"xAI（Elon Musk）开发的 AI 助手，实时联网，风格直白幽默。",tags:["联网","X平台"],price:"paid",url:"https://grok.com"},
+  {cat:"chat",icon:"💡",name:"Perplexity",desc:"AI 搜索引擎，自动联网搜索并给出带引用的回答，适合研究学习。",tags:["搜索","引用来源"],price:"freemium",url:"https://www.perplexity.ai"},
+
+  // 🎨 图像生成
+  {cat:"image",icon:"🎨",name:"Midjourney",desc:"世界顶级的 AI 图像生成工具，以艺术风格和高质量著称，通过 Discord 使用。",tags:["高质量","艺术风"],price:"paid",url:"https://www.midjourney.com"},
+  {cat:"image",icon:"🌌",name:"Stable Diffusion",desc:"开源图像生成模型，可本地部署，支持 ControlNet、LoRA 等扩展。",tags:["开源","可本地部署"],price:"free",url:"https://stability.ai"},
+  {cat:"image",icon:"🖼️",name:"DALL·E 3",desc:"OpenAI 的图像生成模型，集成在 ChatGPT Plus 中，文字理解能力强。",tags:["ChatGPT集成"],price:"paid",url:"https://openai.com/dall-e-3"},
+  {cat:"image",icon:"🇨🇳",name:"通义万相",desc:"阿里出品的 AI 绘图工具，支持文生图、图生图，免费额度充足。",tags:["国产","免费"],price:"free",url:"https://tongyi.aliyun.com/wanxiang"},
+  {cat:"image",icon:"🖌️",name:"文心一格",desc:"百度的 AI 绘画工具，支持多种绘画风格，中文理解优秀。",tags:["国产","百度"],price:"freemium",url:"https://yige.baidu.com"},
+  {cat:"image",icon:"✨",name:"Adobe Firefly",desc:"Adobe 出品的 AI 图像工具，与 Photoshop 深度整合，商用友好。",tags:["商用","Adobe"],price:"freemium",url:"https://firefly.adobe.com"},
+  {cat:"image",icon:"🎭",name:"Leonardo.ai",desc:"功能丰富的 AI 绘图平台，提供模型训练、实时生成等高级功能。",tags:["模型训练","实时"],price:"freemium",url:"https://leonardo.ai"},
+  {cat:"image",icon:"🔄",name:"Clipdrop",desc:"StabilityAI 推出的图像工具集，包含去背景、扩图、超分等实用功能。",tags:["工具集","去背景"],price:"freemium",url:"https://clipdrop.co"},
+
+  // 🎬 视频生成
+  {cat:"video",icon:"🎥",name:"Sora",desc:"OpenAI 的文生视频模型，可生成长达 60 秒的高质量视频，物理模拟出色。",tags:["高质量","60秒"],price:"paid",url:"https://openai.com/sora"},
+  {cat:"video",icon:"⚡",name:"Runway Gen-3",desc:"专业级 AI 视频生成平台，支持文生视频、图生视频、视频编辑。",tags:["专业级","编辑"],price:"paid",url:"https://runwayml.com"},
+  {cat:"video",icon:"🎬",name:"Pika Labs",desc:"易于使用的 AI 视频生成工具，支持多种风格和视频编辑功能。",tags:["易用","编辑"],price:"freemium",url:"https://pika.art"},
+  {cat:"video",icon:"🎞️",name:"可灵 AI",desc:"快手的 AI 视频生成工具，支持文生视频和图生视频，效果出色。",tags:["国产","快手"],price:"freemium",url:"https://kling.kuaishou.com"},
+  {cat:"video",icon:"🇨🇳",name:"即梦 AI",desc:"字节跳动的 AI 视频生成工具，支持多种视频创作模式。",tags:["国产","字节"],price:"freemium",url:"https://jimeng.jianying.com"},
+  {cat:"video",icon:"🎭",name:"HeyGen",desc:"AI 数字人视频生成，上传照片即可生成会说话的视频，适合营销。",tags:["数字人","营销"],price:"paid",url:"https://www.heygen.com"},
+
+  // 🎵 音频/音乐
+  {cat:"audio",icon:"🎵",name:"Suno",desc:"AI 音乐生成工具，输入歌词和风格即可生成完整歌曲，支持多种音乐风格。",tags:["音乐生成","完整歌曲"],price:"freemium",url:"https://suno.com"},
+  {cat:"audio",icon:"🎶",name:"Udio",desc:"高品质 AI 音乐生成，音质出色，支持更精细的音乐风格控制。",tags:["高品质","风格控制"],price:"freemium",url:"https://www.udio.com"},
+  {cat:"audio",icon:"🎤",name:"ElevenLabs",desc:"顶级的 AI 语音合成工具，支持多语言、声音克隆、情感表达。",tags:["语音合成","声音克隆"],price:"freemium",url:"https://elevenlabs.io"},
+  {cat:"audio",icon:"🗣️",name:"Fish Audio",desc:"开源的语音合成与声音克隆工具，支持多种语言和口音。",tags:["开源","语音克隆"],price:"freemium",url:"https://fish.audio"},
+  {cat:"audio",icon:"🎙️",name:"剪映 AI",desc:"剪映内置的 AI 语音/音乐工具，支持文字转语音、AI 音乐生成。",tags:["国产","免费"],price:"free",url:"https://jianying.com"},
+
+  // 💻 编程助手
+  {cat:"code",icon:"💻",name:"GitHub Copilot",desc:"GitHub 与 OpenAI 合作的 AI 编程助手，集成在 VS Code 等 IDE 中。",tags:["IDE集成","自动补全"],price:"paid",url:"https://github.com/features/copilot"},
+  {cat:"code",icon:"🔧",name:"Cursor",desc:"AI-first 的代码编辑器，内置 GPT-4，支持多文件编辑和代码库理解。",tags:["编辑器","GPT-4"],price:"freemium",url:"https://cursor.sh"},
+  {cat:"code",icon:"🤖",name:"Windsurf",desc:"新一代 AI 编程 IDE，支持 Agent 模式自动完成复杂编程任务。",tags:["IDE","Agent"],price:"freemium",url:"https://codeium.com/windsurf"},
+  {cat:"code",icon:"🚀",name:"Claude Code",desc:"Anthropic 推出的命令行编程助手，直接在终端中帮助编程。",tags:["CLI","终端"],price:"paid",url:"https://docs.anthropic.com/en/docs/claude-code"},
+  {cat:"code",icon:"⚡",name:"v0.dev",desc:"Vercel 出品的 AI 前端生成工具，输入描述即可生成 UI 组件代码。",tags:["前端","React"],price:"freemium",url:"https://v0.dev"},
+  {cat:"code",icon:"🎨",name:"截图转代码",desc:"将设计截图通过 AI 转换为前端代码，支持多种框架和样式。",tags:["截图转代码","设计"],price:"freemium",url:"https://screenshot-to-code.com"},
+
+  // ✍️ 写作/文案
+  {cat:"write",icon:"✍️",name:"Jasper",desc:"专业的 AI 写作工具，专为营销、博客、社交文案优化，有多种模板。",tags:["营销","模板"],price:"paid",url:"https://www.jasper.ai"},
+  {cat:"write",icon:"📝",name:"Copy.ai",desc:"AI 文案生成工具，快速生成营销文案、邮件、广告语等。",tags:["文案","营销"],price:"freemium",url:"https://www.copy.ai"},
+  {cat:"write",icon:"📖",name:"Notion AI",desc:"Notion 内置的 AI 写作助手，支持续写、改写、翻译、摘要等。",tags:["笔记集成","写作"],price:"paid",url:"https://www.notion.so/product/ai"},
+  {cat:"write",icon:"📄",name:"Gamma",desc:"AI 演示文稿/文档生成，输入主题即可生成 PPT/文档。",tags:["PPT","演示"],price:"freemium",url:"https://gamma.app"},
+  {cat:"write",icon:"🌏",name:"DeepL Write",desc:"AI 写作润色工具，支持多种语言，擅长翻译和写作改进。",tags:["翻译","润色"],price:"freemium",url:"https://www.deepl.com/write"},
+
+  // 🎯 设计/创意
+  {cat:"design",icon:"🎨",name:"Canva AI",desc:"Canva 内置的 AI 设计功能，AI 生成图片、模板、智能抠图等。",tags:["设计","模板"],price:"freemium",url:"https://www.canva.com"},
+  {cat:"design",icon:"🎭",name:"LogoAI",desc:"AI Logo 设计工具，输入品牌名即可生成多种 Logo 方案。",tags:["Logo","品牌"],price:"paid",url:"https://www.logoai.com"},
+  {cat:"design",icon:"🎬",name:"Remove.bg",desc:"AI 智能去背景工具，一键去除图片背景，支持批量处理。",tags:["去背景","图片"],price:"freemium",url:"https://www.remove.bg"},
+  {cat:"design",icon:"🖼️",name:"Krikey AI",desc:"AI 3D 内容生成，生成 3D 模型和动画，支持游戏开发。",tags:["3D","动画"],price:"freemium",url:"https://www.krikey.ai"},
+  {cat:"design",icon:"🎯",name:"Uizard",desc:"AI 界面设计工具，截图转设计稿，快速原型生成。",tags:["UI设计","原型"],price:"freemium",url:"https://uizard.io"},
+
+  // ⚡ 效率工具
+  {cat:"productivity",icon:"📧",name:"Superhuman AI",desc:"AI 智能邮件客户端，自动生成回复、邮件摘要、任务排序。",tags:["邮件","效率"],price:"paid",url:"https://superhuman.com"},
+  {cat:"productivity",icon:"📋",name:"Otter.ai",desc:"AI 会议助手，实时转写、自动总结、提取行动项。",tags:["会议记录","转写"],price:"freemium",url:"https://otter.ai"},
+  {cat:"productivity",icon:"📊",name:"Gamma",desc:"AI 生成演示文稿、文档、网页，快速将想法转化为视觉内容。",tags:["演示","文档"],price:"freemium",url:"https://gamma.app"},
+  {cat:"productivity",icon:"📅",name:"Motion",desc:"AI 日程管理工具，自动安排日程、优化工作时间。",tags:["日程","GTD"],price:"paid",url:"https://www.usemotion.com"},
+  {cat:"productivity",icon:"📝",name:"Mem.ai",desc:"AI 笔记应用，自动关联和组织笔记内容，智能搜索。",tags:["笔记","知识管理"],price:"freemium",url:"https://mem.ai"},
+
+  // 🔧 其他
+  {cat:"other",icon:"🔬",name:"Hugging Face",desc:"最大的 AI 模型社区和平台，数万个开源模型和数据集，可在线体验。",tags:["开源","模型社区"],price:"free",url:"https://huggingface.co"},
+  {cat:"other",icon:"📊",name:"Character.AI",desc:"AI 角色扮演平台，与各种 AI 角色对话互动。",tags:["角色扮演","娱乐"],price:"free",url:"https://character.ai"},
+  {cat:"other",icon:"🌐",name:"POE",desc:"Quora 出品的 AI 平台聚合器，一站式使用多个 AI 模型。",tags:["聚合","多模型"],price:"freemium",url:"https://poe.com"},
+];
+
+// === 渲染 ===
+function getPriceTag(price) {
+  if(price==='free') return 'tag-free';
+  if(price==='paid') return 'tag-paid';
+  return 'tag-freemium';
+}
+
+function getPriceLabel(price) {
+  if(price==='free') return '免费';
+  if(price==='paid') return '付费';
+  return '免费+付费';
+}
+
+function renderTools(cat) {
+  const container = document.getElementById('toolContainer');
+  const searchVal = document.getElementById('searchInput').value.toLowerCase().trim();
+
+  let filtered = toolsData;
+  if(cat && cat !== 'all') filtered = filtered.filter(t => t.cat === cat);
+  if(searchVal) filtered = filtered.filter(t => 
+    t.name.toLowerCase().includes(searchVal) || 
+    t.desc.toLowerCase().includes(searchVal) ||
+    t.tags.some(tag => tag.toLowerCase().includes(searchVal))
+  );
+
+  // 按分类分组
+  const catOrder = ['chat','image','video','audio','code','write','design','productivity','other'];
+  const catNames = {chat:'💬 对话AI',image:'🎨 图像生成',video:'🎬 视频生成',audio:'🎵 音频/音乐',code:'💻 编程助手',write:'✍️ 写作/文案',design:'🎯 设计/创意',productivity:'⚡ 效率工具',other:'🔧 其他'};
+
+  const grouped = {};
+  filtered.forEach(t => {
+    if(!grouped[t.cat]) grouped[t.cat] = [];
+    grouped[t.cat].push(t);
+  });
+
+  if(Object.keys(grouped).length === 0) {
+    container.innerHTML = `<div class="empty-state"><div class="icon">🔍</div><p>没有找到匹配的工具</p><p style="margin-top:8px;font-size:13px;color:#6b7280">换个关键词试试</p></div>`;
+    return;
+  }
+
+  let html = '';
+  for(const c of catOrder) {
+    if(!grouped[c]) continue;
+    const tools = grouped[c];
+    const adInserted = html.includes('ad-slot');
+    html += `
+      <div class="category" data-cat="${c}">
+        <div class="category-header">
+          <span class="category-icon">${catNames[c].split(' ')[0]}</span>
+          <span class="category-title">${catNames[c].split(' ').slice(1).join(' ')}</span>
+          <span class="category-count">${tools.length} 个工具</span>
+        </div>
+        <div class="tool-grid">
+          ${tools.map(t => `
+            <div class="tool-card" onclick="window.open('${t.url}','_blank')">
+              <div class="tool-card-top">
+                <div class="tool-icon">${t.icon}</div>
+                <div class="tool-info">
+                  <div class="tool-name">${t.name}</div>
+                  <div class="tool-desc">${t.desc}</div>
+                </div>
+              </div>
+              <div class="tool-tags">
+                ${t.tags.map(tag => `<span class="tool-tag">${tag}</span>`).join('')}
+                <span class="tool-tag ${getPriceTag(t.price)}">${getPriceLabel(t.price)}</span>
+              </div>
+              <span class="tool-link">访问官网</span>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+      ${!adInserted && c === catOrder[Math.floor(catOrder.indexOf(c)/1.5)] ? `<div class="ad-slot"><span>📢 中间广告位 — 替换为 AdSense 代码</span></div>` : ''}
+    `;
+  }
+
+  container.innerHTML = html;
+}
+
+// === 分类切换 ===
+function switchCategory(cat, btn) {
+  document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  renderTools(cat);
+}
+
+// === 搜索 ===
+function filterTools() {
+  const activeTab = document.querySelector('.cat-tab.active');
+  const cat = activeTab ? activeTab.dataset.cat : 'all';
+  renderTools(cat);
+}
+
+// === 回到顶部 ===
+window.addEventListener('scroll', () => {
+  document.getElementById('backTop').style.display = window.scrollY > 300 ? 'flex' : 'none';
+});
+
+// === 初始化 ===
+renderTools('all');
+</script>
+
+</body>
+</html>
