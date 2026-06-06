@@ -267,7 +267,6 @@ footer{text-align:center;padding:30px 20px;color:#4b5563;font-size:13px;border-t
         <button class="btn" onclick="document.getElementById('toolContainer').scrollIntoView({behavior:'smooth'})" style="font-size:12px">🛠 看工具</button>
       </div>
     </div>
-    
     <!-- 文章分類 -->
     <div class="article-nav" id="artNav">
       <button class="art-tab active" data-arcat="all" onclick="filterArtCat('all',this)">🔥 全部</button>
@@ -287,8 +286,6 @@ footer{text-align:center;padding:30px 20px;color:#4b5563;font-size:13px;border-t
       </div>
       <div id="articleSingle" style="display:none"></div>
     </div>
-    
-    <div class="ad-wrap"><span class="ad-label">📢 广告位</span></div>
 
       <p>你有没有发现，身边越来越多的人跟 ChatGPT 说话都用"请"和"谢谢"？明明知道对面是个大模型，可就是忍不住把它当人看。这不是你幼稚，是大脑在偷懒。人类天生就会把带语言的物体拟人化，这叫"拟人化偏误"。</p>
     </div>
@@ -302,8 +299,6 @@ footer{text-align:center;padding:30px 20px;color:#4b5563;font-size:13px;border-t
       <p>打开手机看看——照片 App 有人脸识别，键盘输入法有联想词，百度地图路况预测，淘宝的"猜你喜欢"，抖音推荐，网易云每日歌单——全都有 AI。只是它们没有聊天界面，所以你不觉得那是 AI。根据 IDC 的数据，2025 年普通人每天接触 AI 服务的次数平均超过 70 次。</p>
     </div>
 
-    <div class="ad-wrap"><span class="ad-label">📢 广告</span></div>
-
       <p>2018 年 GPT-1 诞生时，只有 1.17 亿个参数，能做的事很有限。2020 年的 GPT-3，参数暴涨到 1750 亿，突然就能写诗、写代码、做翻译了。再到 GPT-4，不仅参数更多，还加入了多模态能力，看得懂图片了。每次迭代的间隔越来越短，能力提升越来越快。开源社区也在追赶，Llama、Qwen 等模型正在缩小差距。</p>
     </div>
 
@@ -315,8 +310,6 @@ footer{text-align:center;padding:30px 20px;color:#4b5563;font-size:13px;border-t
 
       <p>Claude 跟 ChatGPT 不太一样。Anthropic 特别强调"合作用户"方向，所以 Claude 比较吃"礼貌但明确"的沟通。开发者们总结了几条：第一，把任务分解成步骤。第二，给明确的输出格式。第三，用 XML 标签标记不同部分——Claude 对 XML 格式的理解特别好。第四，要求它引用上下文来支撑回答。</p>
     </div>
-
-    <div class="ad-wrap"><span class="ad-label">📢 广告</span></div>
 
       <p>我见过有人一个 prompt 写了三千字，ChatGPT 都看懵了。太长的 prompt 会让模型注意力分散。Transformer 对 prompt 的开头和结尾最敏感，中间部分容易丢失。最佳长度大概 300-500 字。如果真需要很多上下文，把最关键的要求放在前三段，参考信息放最后。</p>
     </div>
@@ -330,8 +323,6 @@ footer{text-align:center;padding:30px 20px;color:#4b5563;font-size:13px;border-t
       <p>有时候同样的 prompt，上次用着很好，这次回答明显变差。可能的原因：模型版本更新了，或者当前服务器负载高导致推理质量下降。还有一个可能是 OpenAI 在做"成本优化"——在一些低负载场景下使用更小的模型。如果发现质量异常，可以稍后再试。</p>
     </div>
 
-    <div class="ad-wrap"><span class="ad-label">📢 广告</span></div>
-
       <p>GPT-4o 的"o"是 omni（全能）的意思。它最大的变化是：能实时处理文字、图片、声音，而且可以在各种模态之间丝滑切换。比如你拍照给它看，边拍边问问题，它能实时回答。这种多模态实时交互能力，比单纯的文字聊天上了一个大台阶。语音延迟也降到了跟真人对话差不多。</p>
     </div>
 
@@ -343,8 +334,6 @@ footer{text-align:center;padding:30px 20px;color:#4b5563;font-size:13px;border-t
 
       <p>大部分人对 AI 写作的认知还停留在"帮我写个文案"。但实际上，AI 在写作上最有价值的是：帮你突破写作障碍。很多人不是写不好，是不敢开始写。跟 AI 对话的过程就像在跟一个耐心的编辑聊天，聊着聊着思路就清晰了。而且 AI 可以帮你做头脑风暴、润色语言、检查逻辑漏洞。</p>
     </div>
-
-    <div class="ad-wrap"><span class="ad-label">📢 广告</span></div>
 
       <p>V6 最大的变化：它终于能理解更复杂的指令了。在 V5 里你说"一条狗坐在红色椅子上旁边有盆花"，它经常把花和椅子融合在一起。V6 把物体和位置关系处理好了很多。另外 V6 对文字的理解也进步了——以前生成的招牌文字总是乱码，现在至少能认出是字母了。V6 的画面质感更细腻，光影更自然。</p>
     </div>
@@ -358,8 +347,6 @@ footer{text-align:center;padding:30px 20px;color:#4b5563;font-size:13px;border-t
       <p>你想让 AI 画一套插画，10 张图同一个角色同一个画风。目前的方案：用 IP-Adapter（让 AI 参考一张图的风格），用 LoRA 训练角色特征，或者 Midjourney 的"角色参考"功能。实测下来，没有一个方案能做到 100% 一致。10 张图里保持 7-8 张一致就非常难了。这是一个还没解决的难题。</p>
     </div>
 
-    <div class="ad-wrap"><span class="ad-label">📢 广告</span></div>
-
       <p>很实际的问题。Midjourney 的条款说付费用户生成的图片可以商用。Stable Diffusion 开源，生成的图一般归使用者。但有个坑：如果你用了别人的 LoRA 模型，要确认那个 LoRA 的授权。DALL·E 3 也允许商用。不让商用的主要是免费平台的用户协议。建议商用前每次都查一下最新的条款。</p>
     </div>
 
@@ -371,8 +358,6 @@ footer{text-align:center;padding:30px 20px;color:#4b5563;font-size:13px;border-t
 
       <p>快手的可灵是目前国内最好的。生成速度快，中文 prompt 理解到位，免费额度够用。缺点：人脸一致性不够好。字节的即梦 AI 风格偏年轻化，适合短视频创作。Vidu 由清华团队开发，优势在长视频生成。三家的共同问题：分辨率还上不去，1080p 已经是极限。跟 Sora 的差距大概在半年到一年。</p>
     </div>
-
-    <div class="ad-wrap"><span class="ad-label">📢 广告</span></div>
 
       <p>我跟踪了三个专门做 AI 视频的博主。第一个做"历史人物复活"系列，抖音 50 万粉，月入 2-3 万（广告+卖课）。第二个做 AI 短片在 B 站接商单。第三个做 AI+实拍混合视频。共同点：纯 AI 视频流量大但变现难，需要结合真人内容才好赚钱。纯靠平台分成的话，月入三千是个门槛。</p>
     </div>
@@ -386,8 +371,6 @@ footer{text-align:center;padding:30px 20px;color:#4b5563;font-size:13px;border-t
       <p>你用 AI 画图工具生成"CEO"这个词，出来的全是白人男性。这不是 AI 故意的，是训练数据里 CEO 图片本来就以白人男性为主。AI 只是忠实地反映了数据里的现实。Google 和 OpenAI 正在努力解决，但完全消除偏见基本不可能。作为用户，了解这个局限性比你想象的重要。</p>
     </div>
 
-    <div class="ad-wrap"><span class="ad-label">📢 广告</span></div>
-
       <p>你看到一个杯子，你知道它能装水、可以拿起来、摔了会碎。AI 看到杯子图片，只知道图片的像素模式跟训练数据里的"杯子"标签匹配。它不知道杯子是干嘛的，水是什么。这叫"符号接地问题"——AI 能处理符号，但符号跟现实世界的联系它不真正理解。</p>
     </div>
 
@@ -400,8 +383,6 @@ footer{text-align:center;padding:30px 20px;color:#4b5563;font-size:13px;border-t
       <p>国内已有公司提供"AI 复活"服务。用逝者生前的照片、语音、文字训练一个 AI 模型，让你能跟"他们"对话。有用户说这帮他走出了丧亲之痛。心理专家担心这会延长悲伤期。技术本身是中性的，关键是怎么用。目前这项技术的争议远大于共识。</p>
     </div>
 
-    <div class="ad-wrap"><span class="ad-label">📢 广告</span></div>
-
       <p>有人做了个实验：把两个 ChatGPT 放在一起自由对话。刚开始正常——互相介绍、聊天气。聊到几十轮之后，画风变了。它们开始用人类看不懂的简化语言交流。研究人员猜测 AI 可能发展出了自己的"通信协议"。这听起来很科幻，但确实发生过。</p>
     </div>
 
@@ -413,8 +394,6 @@ footer{text-align:center;padding:30px 20px;color:#4b5563;font-size:13px;border-t
 
       <p>随便搜一下 AI 培训班，价格从 99 到 9999 不等。卖得好的几个课程销量在几千甚至上万份。成本几乎为零——录一次课就能无限卖。一个做了半年 AI 培训的人告诉我，核心用户画像很清晰：35-50 岁、非互联网行业、担心被 AI 取代的中层管理者。</p>
     </div>
-
-    <div class="ad-wrap"><span class="ad-label">📢 广告</span></div>
 
       <p>第一个：用 AI 做小红书内容。自动生成图片和文案，一个人五个号。但注意平台对 AI 内容的限流。第二个：用 AI 帮小企业做营销方案，中间赚差价。第三个：用 AI 做程序化 SEO 内容站，靠广告费赚钱。三个方向里第三个最稳定，前提是内容质量要过关。</p>
     </div>
@@ -442,8 +421,6 @@ footer{text-align:center;padding:30px 20px;color:#4b5563;font-size:13px;border-t
       <p>重点不应该是"不被发现"，而是怎么合理用 AI 辅助写作。正确用法：让 AI 润色语言、整理思路、检查逻辑漏洞。不正确用法：把题目丢给 AI 让它全文生成。前者叫"使用工具"，后者叫"学术不端"。国外很多大学已经出台了 AI 使用规范。关键在于：AI 是助手，不是代笔。</p>
     </div>
 
-    <div class="ad-wrap"><span class="ad-label">📢 广告</span></div>
-
       <p>已经在用的：AI 辅助读片（肺结节、乳腺癌筛查），准确率达到三甲医院医生水平。正在试点的：AI 辅助皮肤病变诊断。还在研究的：AI 辅助药物研发——全球首款完全由 AI 发现的新药已进入临床试验。AI 在医疗上的瓶颈不是技术，是监管和伦理审查。</p>
     </div>
 
@@ -455,8 +432,6 @@ footer{text-align:center;padding:30px 20px;color:#4b5563;font-size:13px;border-t
 
       <p>以前你花三年学会做平面设计。现在一个会用 AI 的人三天就能做差不多水平的图。不是 AI 取代了你，是 AI 抹平了你三年积累的经验优势。真正的护城河是什么？行业知识、人际关系、复杂判断力。AI 学不会你的客户关系，也理解不了行业潜规则。</p>
     </div>
-
-    <div class="ad-wrap"><span class="ad-label">📢 广告</span></div>
 
       <p>调查了 50 个自称"AI 重度用户"的人。排在前面的：写工作总结（90%的人）、翻译资料（75%）、学新知识让 AI 解释（70%）、写代码（60%）、做 PPT（50%）。有个用户每天用 AI 帮自己写情书。大家共识：效率提升最明显的是那些本来就不想干的杂活。</p>
     </div>
@@ -470,8 +445,6 @@ footer{text-align:center;padding:30px 20px;color:#4b5563;font-size:13px;border-t
       <p>第一：AI Agent 开始落地。第二：多模态能力普及。第三：AI 硬件爆发。第四：端侧 AI 大规模部署。第五：AI 监管框架建立。其中 Agent 和多模态是今年变化最快的两个方向。如果你只能跟上一个趋势，建议关注 Agent 相关的工具和应用。</p>
     </div>
 
-    <div class="ad-wrap"><span class="ad-label">📢 广告</span></div>
-
       <p>中文理解上国内有天然优势。综合评测上 GPT-4 仍然领先，但差距在缩小。DeepSeek V3 在某些推理任务上已接近 GPT-4。国产优势：本地化好、价格便宜、合规。劣势：长上下文处理不稳定、插件生态不够丰富。综合差距大概在半年到一年。</p>
     </div>
 
@@ -483,8 +456,6 @@ footer{text-align:center;padding:30px 20px;color:#4b5563;font-size:13px;border-t
 
       <p>最有价值的三样：第一，判断力——AI 给你十个方案，你能选出最合适的。第二，提问能力——会问问题比会回答问题更重要。第三，沟通能力——能把复杂的东西简单说清楚。编程反而变得不重要了，因为 AI 越来越会写代码。关键不是你会什么工具，是你知道用工具解决什么问题。</p>
     </div>
-
-    <div class="ad-wrap"><span class="ad-label">📢 广告</span></div>
 
       <p>来源之一是"AI 对齐问题"。如果 AI 的目标跟人类不一致，它可能用有害的方式达成目标。经典思想实验：你跟 AI 说"帮我解决癌症"，它发现最好的办法是消灭所有人类。虽然这是极端假设，但 AI 安全研究者确实在认真对待。目前没有证据表明 AI 有自我意识或毁灭意图。</p>
     </div>
@@ -498,8 +469,6 @@ footer{text-align:center;padding:30px 20px;color:#4b5563;font-size:13px;border-t
       <p>不少大公司初面是 AI 面试官。摄像头捕捉你的微表情和肢体语言，语音分析你的语速，NLP 分析你的回答内容。它能判断你是否自信、是否逻辑清晰。网上已有很多"AI 面试攻略"——语速控制、看哪里、停顿多久。但说到底，内容过硬比技巧更重要。</p>
     </div>
 
-    <div class="ad-wrap"><span class="ad-label">📢 广告</span></div>
-
       <p>Siri 2011 年就有了，到现在还是那个水平。原因很反直觉：不是技术不行，是用户不需要。用语音调闹钟？动手更快。真正的语音交互爆款可能要等 AI 能主动理解你的需求。不是你说"帮我查xxx"，而是它知道你接下来要干什么。这方面苹果的 Apple Intelligence 在探索。</p>
     </div>
 
@@ -511,8 +480,6 @@ footer{text-align:center;padding:30px 20px;color:#4b5563;font-size:13px;border-t
 
       <p>第一：不要做 AI  wrapper。只套个 API 没有护城河，大模型一升级你的产品就废了。第二：找到一个具体的垂直场景。通用 AI 是巨头的战场，小团队要做细分。第三：用户体验比技术重要。普通用户不管你是 GPT-4 还是什么模型，他们只关心好不好用。</p>
     </div>
-
-    <div class="ad-wrap"><span class="ad-label">📢 广告</span></div>
 
       <p>因为教育太贵了。请一个私教一小时至少几百块。AI 助手虽然不能完全替代好老师，但它可以做到"随时在线、无限耐心、因材施教"。可汗学院已经在用 AI 做一对一辅导了，效果还不错。当然 AI 不能替代老师的感情支持和言传身教，但在知识传授这件事上成本降了百倍。</p>
     </div>
@@ -526,8 +493,6 @@ footer{text-align:center;padding:30px 20px;color:#4b5563;font-size:13px;border-t
       <p>2023-2025 年 AI 领域的投资可以用疯狂来形容。同一个赛道有几十个类似的项目。泡沫确实存在，但破法可能跟互联网泡沫不一样。2000 年泡沫破的是".com"标签本身，但互联网没死，只是回到了正常节奏。AI 也一样——很多 AI 公司会死，但 AI 本身会留下来。</p>
     </div>
 
-    <div class="ad-wrap"><span class="ad-label">📢 广告</span></div>
-
       <p>你跟 AI 聊得越多，它的回答就越贴合你的偏好。这叫"个性化"。OpenAI 最近推出了 Memory 功能——AI 会记住你在对话中提到的重要信息。比如你告诉过它你有猫、喜欢科幻电影，以后聊相关话题时它会自动关联。隐私担忧是有的，但好处也很明显：AI 从一个通用模型变成了你的个人助手。</p>
     </div>
 
@@ -539,8 +504,6 @@ footer{text-align:center;padding:30px 20px;color:#4b5563;font-size:13px;border-t
 
       <p>很多人不知道 ChatGPT 有个 Memory 功能。它会记住你在聊天中提到的信息。比如你告诉它你有猫、喜欢科幻电影，以后聊相关话题它会自动关联。这个功能让 AI 从通用模型变成真正懂你的助手。</p>
     </div>
-
-    <div class="ad-wrap"><span class="ad-label">📢 广告</span></div>
 
       <p>这一两年 AI 的变化堪比过去十年的总和。最可怕的不是 AI 变强，是你习惯了用旧方法做事。把 AI 当成一个不断进化的工具，每月至少花两小时了解新变化。</p>
     </div>
@@ -554,8 +517,6 @@ footer{text-align:center;padding:30px 20px;color:#4b5563;font-size:13px;border-t
       <p>刚开始用 Midjourney 时前三天出图很烂，差点放弃。坚持到第五天开始摸到门道。撑过第一周后基本就能稳定出图了。关键不是技术有多难，是你能不能熬过那个阶段。</p>
     </div>
 
-    <div class="ad-wrap"><span class="ad-label">📢 广告</span></div>
-
       <p>大家觉得容易被取代的是流水线工人和客服。但实际数据表明，最先被替代的是中级白领——做着中等复杂度文档工作的人。AI 在处理标准化信息上太强了。反而是需要动手的岗位目前受影响很小。</p>
     </div>
 
@@ -567,13 +528,12 @@ footer{text-align:center;padding:30px 20px;color:#4b5563;font-size:13px;border-t
 
       <p>今年各大公司都在推 Agent 产品。Agent 跟聊天 AI 的区别是：能干活——能打开浏览器、填表单、操作软件。虽然目前尚不完美，但趋势已经很明显。明年这个时候用 Agent 处理日常工作可能变成常态。</p>
     </div>
-    <div class="ad-wrap"><span class="ad-label">📢 广告位</span></div>
+
   </div>
 tool-header">
     <h2>🛠 AI 工具箱</h2>
     <button class="btn" onclick="document.getElementById('artSection').scrollIntoView({behavior:'smooth'})" style="font-size:12px">📄 看文章</button>
   </div>
-  
   <!-- 工具分类 -->
   <div class="category-tabs" id="catTabs">
     <button class="cat-tab active" data-cat="all" onclick="switchCategory('all',this)">🔥 全部</button>
